@@ -1,101 +1,132 @@
-import Image from "next/image";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+import data from '@/db/verbs.json';
+import en from '@/db/en.json';
+import types from '@/db/types.json'
+
+import { useState } from 'react';
+import { conjugateVerb } from './logic';
+import { TType, WordData, WordDictionary } from './type';
+// Type assertion for TypeScript
+const jsonData = data as unknown as WordDictionary;
+const meaning = en as any; // Specify a more precise type if possible
+const formTypes = types as TType[]
+// Filter for verbs
+const verbs: WordData[] = Object.values(jsonData);
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [selectedForms, setSelectedForms] = useState<string[]>([]);
+  const [verbType, setVerbType] = useState<string>('all');
+  const [jlptLevel, setJlptLevel] = useState<string>('all');
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, checked } = event.target;
+    setSelectedForms((prevForms) => 
+      checked ? [...prevForms, value] : prevForms.filter((form) => form !== value)
+    );
+  };
+
+  const handleVerbTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setVerbType(event.target.value);
+  };
+
+  const handleJlptLevelChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setJlptLevel(event.target.value);
+  };
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredVerbs = verbs.filter((verb) => {
+    const matchesType = verbType === 'all' || verb.type.includes(verbType);
+    const matchesJlpt = jlptLevel === 'all' || verb.jlpt.toString() === jlptLevel;
+    const matchesSearch = Object.values(verb).some(value =>
+      typeof value === 'string' && value.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    return matchesType && matchesJlpt && matchesSearch;
+  });
+
+  return (
+    <div className="p-6 max-w-2xl mx-auto">
+      <h1 className="text-3xl font-bold mb-4">Verb Conjugator</h1>
+
+      <input
+        type="text"
+        placeholder="Tìm kiếm..."
+        value={searchTerm}
+        onChange={handleSearchChange}
+        className="border border-gray-300 rounded-md p-2 mb-4 w-full"
+      />
+
+      <div className="mb-4">
+        <label className="block mb-2">Chọn loại động từ:</label>
+        <select
+          value={verbType}
+          onChange={handleVerbTypeChange}
+          className="border border-gray-300 rounded-md p-2 w-full"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <option value="all">Tất cả</option>
+          <option value="Ichidan verb">Động từ Ichidan</option>
+          <option value="Godan verb">Động từ Godan</option>
+          <option value="Suru verb">Động từ Suru</option>
+        </select>
+      </div>
+
+      <div className="mb-4">
+        <label className="block mb-2">Chọn cấp độ JLPT:</label>
+        <select
+          value={jlptLevel}
+          onChange={handleJlptLevelChange}
+          className="border border-gray-300 rounded-md p-2 w-full"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <option value="all">Tất cả</option>
+          <option value="5">N5</option>
+          <option value="4">N4</option>
+          <option value="3">N3</option>
+          <option value="2">N2</option>
+          <option value="1">N1</option>
+        </select>
+      </div>
+
+      <div className="mb-4">
+        <label className="block mb-2">Chọn các dạng chia:</label>
+        {formTypes.map((formType) => (
+          <div key={formType.value}>
+            <label>
+              <input
+                type="checkbox"
+                value={formType.value}
+                checked={selectedForms.includes(formType.value)}
+                onChange={handleCheckboxChange}
+                className="mr-2"
+              />
+              {meaning.forms[formType.value]}
+            </label>
+          </div>
+        ))}
+      </div>
+
+      <ul>
+        {filteredVerbs.map((verb) => {
+          const conjugated:any = conjugateVerb(verb.word, verb.group);
+
+          return (
+            <li key={verb.index} className="border-b border-gray-300 py-2">
+              <p className="font-semibold">{verb.word} ({verb.kana})</p>
+              <p>{meaning.verbs[verb.romaji]}</p>
+              <ul className="pl-4">
+                {selectedForms.map((form) => (
+                  <li key={form}>
+                    {meaning.forms[formTypes.find(f => f.value === form)?.value??"notfinding"]}: {conjugated[form]}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
