@@ -20,3 +20,8 @@ export type TType = {
     value: string
     kanji: string
 }
+
+export type TGroup = {
+    value: number;
+    name: string;
+}

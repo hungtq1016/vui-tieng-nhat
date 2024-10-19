@@ -1,32 +1,35 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import data from '@/db/rule.json';
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const  conjugationRules: any = data as unknown
+const conjugationRules: any = data as unknown;
 
 export function conjugateVerb(verb: string, group: number) {
-    const stem = verb.slice(0, group == 3 ? -2 : -1);
-    
-    if (group == 1) {
-      for (const ending in conjugationRules.Godan) {
-        if (verb.endsWith(ending)) {
-          const forms = conjugationRules.Godan[ending];
-          return {
-            ru: verb,
-            masu: stem + forms[0],
-            te: stem + forms[1],
-            ta: stem + forms[2],
-            nai: stem + forms[3],
-            ba: stem + forms[4],
-            you: stem + forms[5],
-            rare: forms[6] ? stem + forms[6] : '',
-            rareru: forms[7] ? stem + forms[7] : '',
-            saseru: forms[8] ? stem + forms[8] : '',
-          };
+    // Xử lý động từ đặc biệt
+    if (verb === '来る') {
+        return createConjugationResult(verb, '', conjugationRules.Kuru);
+    } else if (verb === '行く') {
+        return createConjugationResult(verb, '行', conjugationRules.Iku);
+    }else if (verb === '有る') {
+        return createConjugationResult(verb, '', conjugationRules.Aru);
+    }
+    const stem = verb.slice(0, group === 3 ? -2 : -1);
+    const forms = group === 1 ? conjugationRules.Godan : group === 2 ? conjugationRules.Ichidan : conjugationRules.Suru;
+
+    if (group === 1) {
+        for (const ending in forms) {
+            if (verb.endsWith(ending)) {
+                return createConjugationResult(verb, stem, forms[ending]);
+            }
         }
-      }
-    } else if (group == 2) {
-      const forms = conjugationRules.Ichidan;
-      return {
+    } else if (group === 2 || group === 3) {
+        return createConjugationResult(verb, stem, forms);
+    }
+
+    // Default return for unsupported verb types
+    return createConjugationResult(verb, verb, Array(11).fill(verb));
+}
+
+function createConjugationResult(verb: string, stem: string, forms: string[]) {
+    return {
         ru: verb,
         masu: stem + forms[0],
         te: stem + forms[1],
@@ -37,32 +40,7 @@ export function conjugateVerb(verb: string, group: number) {
         rare: forms[6] ? stem + forms[6] : '',
         rareru: forms[7] ? stem + forms[7] : '',
         saseru: forms[8] ? stem + forms[8] : '',
-      };
-    } else if (group == 3) {
-      const forms = conjugationRules.Suru;
-      return {
-        ru: verb,
-        masu: verb.slice(0, -2) + forms[0],
-        te: verb.slice(0, -2) + forms[1],
-        ta: verb.slice(0, -2) + forms[2],
-        nai: verb.slice(0, -2) + forms[3],
-        ba: verb.slice(0, -2) + forms[4],
-        rare: verb.slice(0, -2) + forms[5],
-        rareru: verb.slice(0, -2) + forms[6],
-        saseru: verb.slice(0, -2) + forms[7],
-      };
-    }
-  
-    return {
-      ru: verb,
-      masu: verb,
-      te: verb,
-      ta: verb,
-      nai: verb,
-      ba: verb,
-      you: verb,
-      rare: verb,
-      rareru: verb,
-      saseru: verb,
+        ro: forms[9] ? stem + forms[9] : '',
+        runa: forms[10] ? stem + forms[10] : '',
     };
-  }
+}

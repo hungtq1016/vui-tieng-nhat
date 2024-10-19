@@ -1,5 +1,5 @@
 {
-  "verbs": {
+  "Verbs": {
     "aru": "to be, to have",
     "tsukeru": "to soak; to pickle",
     "yaru": "to do",
@@ -342,19 +342,38 @@
     "yaseru": "to become thin",
     "haru": "to stick; to paste"
   },
-  "forms": {
-    "notfinding": "Cannot find",
-    "ru": "Dictionary Form",
-    "masu": "Humble Form",
-    "te": "Te Form",
-    "ta": "Past Form",
-    "nai": "Negative Form",
-    "ba": "Conditional Form",
-    "you": "Volitional Form",
-    "rare": "Potential Form",
-    "rareru": "Passive Form",
-    "saseru": "Causative Form",
-    "ro":"Imperative Form",
-    "runa":"Negative Imperative form"
+  "HomePage": {
+    "forms": {
+      "label":"Select forms:",
+      "notfinding": "Cannot find",
+      "ru": "Dictionary Form",
+      "masu": "Humble Form",
+      "te": "Te Form",
+      "ta": "Past Form",
+      "nai": "Negative Form",
+      "ba": "Conditional Form",
+      "you": "Volitional Form",
+      "rare": "Potential Form",
+      "rareru": "Passive Form",
+      "saseru": "Causative Form",
+      "ro": "Imperative Form",
+      "runa": "Negative Imperative form"
+    },
+    "verbtypes": {
+      "label": "Select verb type:",
+      "0": "All Verbs",
+      "1": "Godan Verb",
+      "2": "Ichidan Verb",
+      "3": "Suru Verb"
+    },
+    "jlpt": {
+      "label": "Select JLPT level:",
+      "0": "All Levels",
+      "1": "N1",
+      "2": "N2",
+      "3": "N3",
+      "4": "N4",
+      "5": "N5"
+    }
   }
 }

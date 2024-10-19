@@ -1,7 +1,7 @@
 [
     {
         "index": 24,
-        "word": "ある",
+        "word": "有る",
         "kana": "ある",
         "romaji": "aru",
         "type": "Verb",
@@ -13,7 +13,7 @@
     },
     {
         "index": 587,
-        "word": "つける",
+        "word": "浸ける",
         "kana": "つける",
         "romaji": "tsukeru",
         "type": "Verb",
@@ -37,7 +37,7 @@
     },
     {
         "index": 771,
-        "word": "いじめる",
+        "word": "苛める",
         "kana": "いじめる",
         "romaji": "ijimeru",
         "type": "Verb",
