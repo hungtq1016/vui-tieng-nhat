@@ -343,15 +343,15 @@
     "haru": "dán; dính"
   },
   "HomePage": {
-    "warning":{
-      "label":"Cảnh báo:",
-      "content":"Các thể chia là tương đối, không đúng 100% cân nhắc trước khi xem"
+    "warning": {
+      "label": "Cảnh báo:",
+      "content": "Các thể chia là tương đối, không đúng 100% cân nhắc trước khi xem"
     },
-    "heading":{
-      "page":"Chia động từ tiếng Nhật"
+    "heading": {
+      "page": "Chia động từ tiếng Nhật"
     },
     "forms": {
-      "label":"Chọn các dạng chia:",
+      "label": "Chọn các dạng chia:",
       "notfinding": "Không tìm thấy",
       "ru": "Thể từ điển",
       "masu": "Thể lịch sự",
@@ -382,5 +382,29 @@
       "4": "N4",
       "5": "N5"
     }
+  },
+  "Forms": {
+    "te": {
+      "haikemasen": "Cấm {v}.",
+      "moidesuka": "Xin phép {v} được không?.",
+      "kudasai": "Yêu cầu hãy {v}.",
+      "iru": "Đang {v}.",
+      "shimau": "Diễn tả hành động hoàn thành hoặc không mong muốn {v}.",
+      "miru": "Thử {v}.",
+      "ageru": "Tôi {v} cho ai đó.",
+      "morau": "Tôi được ai đó {v} cho.",
+      "kara": "Sau khi {v}."
+    },
+    "ta":{
+      "kotogaaru": "Đã từng {v}.",
+      "bakari": "Vừa mới {v}.",
+      "ritarisuru": "Làm {v} và {v}.",
+      "ra": "Nếu {v}.",
+      "hougaii": "Nên {v}.",
+      "noni": "Mặc dù đã {v}.",
+      "mama": "Trong trạng thái {v}.",
+      "radouka": "Nếu {v} thì sao?"
+    }
+    
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import data from '@/db/verbs.json';
@@ -7,6 +8,7 @@ import { useState } from 'react';
 import { conjugateVerb } from './logic';
 import { TType, WordData, WordDictionary } from './type';
 import { groups, jlptLevels, types } from './data';
+import forms from '@/db/forms.json'
 // Type assertion for TypeScript
 const jsonData = data as unknown as WordDictionary;
 const formTypes = types as TType[]
@@ -17,10 +19,12 @@ export default function Home() {
   const [selectedForms, setSelectedForms] = useState<string[]>([]);
   const [verbType, setVerbType] = useState<number>(0);
   const [jlptLevel, setJlptLevel] = useState<number>(0);
+  const [selectedVerb, setSelectedVerb] = useState({ value: "", form: "", romaji: "" })
   const [searchTerm, setSearchTerm] = useState<string>('');
 
   const transVerbs = useTranslations('Verbs');
   const transHome = useTranslations('HomePage');
+  const transForms = useTranslations('Forms');
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
@@ -50,10 +54,52 @@ export default function Home() {
     return matchesType && matchesJlpt && matchesSearch;
   });
 
+  const showForms = (verb: any) => {
+    if (verb.form === "te") {
+      return forms.te.map((form, index) => (
+        <div key={index}
+          className='bg-gray-50 p-2 rounded hover:bg-gray-100'>
+          <div className='font-medium'>
+            <span className='text-red-600'>{verb.value}</span>{form.name}
+          </div>
+          <div className='text-sm' dangerouslySetInnerHTML={{ __html: transForms(`te.${form.romaji}`, { v: transVerbs(verb.romaji) }) }} />
+
+        </div>
+      ));
+    }
+    if (verb.form === "ta") {
+      return forms.ta.map((form, index) => (
+        <div key={index}
+          className='bg-gray-50 p-2 rounded hover:bg-gray-100'>
+          <div className='font-medium'>
+            <span className='text-red-600'>{verb.value}</span>{form.name}
+          </div>
+          <div className='text-sm' dangerouslySetInnerHTML={{ __html: transForms(`ta.${form.romaji}`, { v: transVerbs(verb.romaji) }) }} />
+
+        </div>
+      ));
+    }
+    return null; // return null if the condition is not met
+  }
+  // const fadeList = (value: string) => {
+  //   const arr = value.split(";")
+  //   const [currentIndex, setCurrentIndex] = useState(0);
+
+  //   useEffect(() => {
+  //     const interval = setInterval(() => {
+  //       setCurrentIndex((prevIndex) => (prevIndex + 1) % arr.length);
+  //     }, 1000); // 1 giây
+
+  //     return () => clearInterval(interval); // Dọn dẹp khi component unmount
+  //   }, [arr.length]);
+
+  //   return arr[currentIndex];
+  // }
+
   return (
     <div className=''>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className='pt-10 px-10 bg-white'>
+        <div className='pt-10 px-10 bg-white h-screen overflow-y-scroll'>
           <input
             type="text"
             placeholder="Tìm kiếm..."
@@ -113,16 +159,22 @@ export default function Home() {
               ))}
             </div>
           </div>
+
+          <div className='flex flex-col gap-2'>
+            {
+              showForms(selectedVerb)
+            }
+          </div>
         </div>
         <div className="overflow-y-scroll h-screen py-5">
           <div className='mx-10 md:ml-0'>
             <h1 className="text-3xl font-bold mb-4 bg-white rounded">
               <p className='px-5 py-3'>{transHome("heading.page")}</p>
             </h1>
-              <div className='flex gap-2 bg-red-100 text-red-600 p-2 rounded mb-4'>
-                <div className='font-bold'>{transHome("warning.label")}</div>
-                <div>{transHome("warning.content")}</div>
-              </div>
+            <div className='flex gap-2 bg-red-100 text-red-600 p-2 rounded mb-4'>
+              <div className='font-bold'>{transHome("warning.label")}</div>
+              <div>{transHome("warning.content")}</div>
+            </div>
             <div className='flex flex-col gap-4'>
               {filteredVerbs.map((verb) => {
                 const conjugated: any = conjugateVerb(verb.word, verb.group);
@@ -138,16 +190,22 @@ export default function Home() {
 
                     {
                       selectedForms.length > 0 && <ul className="mt-2">
-                      {selectedForms.map((form) => (
-                        <li className='odd:bg-stone-100 py-1 px-2 even:bg-stone-50'
-                          key={form}>
-                          <span className='text-gray-900 font-semibold'>{transHome(`forms.${formTypes.find(f => f.value === form)?.value ?? "notfinding"}`)}</span>: 
-                          <span className='text-gray-600'>
-                            {conjugated[form]}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                        {selectedForms.map((form) => (
+                          <li className='odd:bg-stone-100 py-1 px-2 even:bg-stone-50'
+                            key={form}
+                            onClick={() => setSelectedVerb({
+                              value: conjugated[form],
+                              romaji: verb.romaji,
+                              form
+                            })}
+                          >
+                            <span className='text-gray-900 font-semibold'>{transHome(`forms.${formTypes.find(f => f.value === form)?.value ?? "notfinding"}`)}</span>:
+                            <span className='text-gray-600'>
+                              {conjugated[form]}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
                     }
                   </div>
                 );

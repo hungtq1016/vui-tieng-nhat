@@ -1,0 +1,75 @@
+{
+  "te": [
+    {
+      "name": "はけません",
+      "romaji": "haikemasen"
+    },
+    {
+      "name": "もいいですか",
+      "romaji": "moidesuka"
+    },
+    {
+      "name": "ください",
+      "romaji": "kudasai"
+    },
+    {
+      "name": "いる",
+      "romaji": "iru"
+    },
+    {
+      "name": "しまう",
+      "romaji": "shimau"
+    },
+    {
+      "name": "みる",
+      "romaji": "miru"
+    },
+    {
+      "name": "あげる",
+      "romaji": "ageru"
+    },
+    {
+      "name": "もらう",
+      "romaji": "morau"
+    },
+    {
+      "name": "から",
+      "romaji": "kara"
+    }
+  ],
+  "ta":[
+    {
+      "name": "ことがある",
+      "romaji": "kotogaaru"
+    },
+    {
+      "name": "ばかり",
+      "romaji": "bakari"
+    },
+    {
+      "name": "りたりする",
+      "romaji": "ritarisuru"
+    },
+    {
+      "name": "ら",
+      "romaji": "ra"
+    },
+    {
+      "name": "ほうがいい",
+      "romaji": "hougaii"
+    },
+    {
+      "name": "のに",
+      "romaji": "noni"
+    },
+    {
+      "name": "まま",
+      "romaji": "mama"
+    },
+    {
+      "name": "らどうか",
+      "romaji": "radouka"
+    }
+  ]
+  
+}
