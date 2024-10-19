@@ -154,7 +154,7 @@
     "toreru": "được lấy ra; bị xóa; có thể lấy được",
     "toriageru": "nhặt lên",
     "uketoru": "nhận; hiểu",
-    "kau": "mua; mua sắm",
+    "kau": "mua",
     "baibaisuru": "thương mại; mua bán",
     "oku": "đặt; để",
     "torikaeru": "trao đổi; thay thế",
@@ -358,7 +358,7 @@
       "te": "Thể te",
       "ta": "Thể quá khứ",
       "nai": "Thể phủ định",
-      "ba": "Thể điều kiện",
+      "reba": "Thể điều kiện",
       "you": "Thể ý chí",
       "rare": "Thể khả năng",
       "rareru": "Thể bị động",
@@ -386,25 +386,33 @@
   "Forms": {
     "te": {
       "haikemasen": "Cấm {v}.",
-      "moidesuka": "Xin phép {v} được không?.",
+      "moidesuka": "Xin phép {v} được không?",
       "kudasai": "Yêu cầu hãy {v}.",
-      "iru": "Đang {v}.",
-      "shimau": "Đã/ Lỡ {v} mất rồi.",
+      "iru": "Đang {v}.; Thường {v}",
+      "shimau": "Sẽ {v} xong.",
+      "shimatta": "Lỡ {v} mất rồi.; Đã {v} xong rồi.",
       "miru": "Thử {v}.",
       "ageru": "Tôi {v} cho ai đó.",
       "morau": "Tôi được ai đó {v} cho.",
+      "kureru": "Ai đó {v} cho.",
       "kara": "Sau khi {v}.",
-      "oku": "Chuẩn bị {v}."
+      "oku": "Chuẩn bị {v}.",
+      "itadakemasenka":"Làm ơn {v} được không?",
+      "mo":"Cho dù/ Dẫu {v} đi chăng nữa,V2"
     },
     "ta":{
       "kotogaaru": "Đã từng {v}.",
       "bakari": "Vừa mới {v}.",
       "ritarisuru": "Làm {v} và {v}.",
-      "ra": "Nếu {v}.",
+      "ra": "Nếu {v}, V2; Sau khi {v}, V2.",
+      "raiidesuka": "Nên {v} như thế nào?",
       "hougaii": "Nên {v}.",
       "noni": "Mặc dù đã {v}.",
       "mama": "Trong trạng thái {v}.",
-      "radouka": "Nếu {v} thì sao?"
+      "radouka": "Nếu {v} thì sao?",
+      "atode":"Sau khi {v}",
+      "toarini": "{v} theo như V2",
+      "toki":"Sau khi {v}, V2"
     },
     "nai":{
       "kerebanaranai": "Phải {v}.",
@@ -416,7 +424,9 @@
       "iuchini": "Trước khi {v}.",
       "ikagiri": "Trừ khi {v}.",
       "kutehanaranai": "Không thể không {v}.",
-      "iyounisuru": "Cố gắng để không {v}."
+      "iyounisuru": "Cố gắng để không {v}.",
+      "itsumori": "Dự định không {v} nữa.",
+      "kutemo":"Cho dù/ Dẫu không {v} đi chăng nữa,V2"
     },
     "ru":{
       "kotogaaru": "Đã từng {v}.",
@@ -428,13 +438,22 @@
       "younisuru": "Cố gắng {v}.",
       "bekida": "Nên {v}.",
       "kamoshirenai": "Có lẽ sẽ {v}.",
-      "maeni": "Trước khi {v}."
+      "maeni": "Trước khi {v}.",
+      "toki":"Trước khi {v}, V2"
     },
     "masu":{
       "su":"(Lịch sự) {v}",
       "sen":"Không {v}",
       "shita":"Đã {v}",
-      "sendeshita":"Đã không {v}"
+      "sendeshita":"Đã không {v}",
+      "niiku":"Đi/Đến/Về để làm {v}",
+      "tai":"Muốn {v}",
+      "nagara":"Vừa {v} vừa làm V2",
+      "nasai":"(Phụ nữ thường dùng) Hãy làm {v}",
+      "mashouka":"Hãy để tôi {v} cho nhé?"
+    },
+    "you":{
+      "toomotteiru":"Đang dự định {v}"
     }
   }
 }

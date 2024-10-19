@@ -2,179 +2,308 @@
   "te": [
     {
       "name": "はけません",
-      "romaji": "haikemasen"
+      "romaji": "haikemasen",
+      "jlpt": 5
+    },
+    {
+      "name": "いただけませんか",
+      "romaji": "itadakemasenka",
+      "jlpt": 5
     },
     {
       "name": "もいいですか",
-      "romaji": "moidesuka"
+      "romaji": "moidesuka",
+      "jlpt": 5
     },
     {
       "name": "ください",
-      "romaji": "kudasai"
+      "romaji": "kudasai",
+      "jlpt": 5
     },
     {
       "name": "いる",
-      "romaji": "iru"
+      "romaji": "iru",
+      "jlpt": 5
     },
     {
       "name": "しまう",
-      "romaji": "shimau"
+      "romaji": "shimau",
+      "jlpt": 5
+    },
+    {
+      "name": "しまった",
+      "romaji": "shimatta",
+      "jlpt": 5
     },
     {
       "name": "みる",
-      "romaji": "miru"
+      "romaji": "miru",
+      "jlpt": 5
     },
     {
       "name": "あげる",
-      "romaji": "ageru"
+      "romaji": "ageru",
+      "jlpt": 5
     },
     {
       "name": "もらう",
-      "romaji": "morau"
+      "romaji": "morau",
+      "jlpt": 5
+    },
+    {
+      "name": "くれる",
+      "romaji": "kureru",
+      "jlpt": 5
     },
     {
       "name": "から",
-      "romaji": "kara"
+      "romaji": "kara",
+      "jlpt": 5
     },
     {
       "name": "おく",
-      "romaji": "oku"
+      "romaji": "oku",
+      "jlpt": 5
+    },
+    {
+      "name": "も,V2",
+      "romaji": "mo",
+      "jlpt": 5
     }
   ],
-  "ta":[
+  "ta": [
     {
       "name": "ことがある",
-      "romaji": "kotogaaru"
+      "romaji": "kotogaaru",
+      "jlpt": 4
     },
     {
       "name": "ばかり",
-      "romaji": "bakari"
+      "romaji": "bakari",
+      "jlpt": 4
     },
     {
       "name": "り,たりする",
-      "romaji": "ritarisuru"
+      "romaji": "ritarisuru",
+      "jlpt": 4
     },
     {
-      "name": "ら",
-      "romaji": "ra"
+      "name": "ら,V2",
+      "romaji": "ra",
+      "jlpt": 4
+    },
+    {
+      "name": "らいいですか",
+      "romaji": "raiidesuka",
+      "jlpt": 4
     },
     {
       "name": "ほうがいい",
-      "romaji": "hougaii"
+      "romaji": "hougaii",
+      "jlpt": 4
     },
     {
       "name": "のに",
-      "romaji": "noni"
+      "romaji": "noni",
+      "jlpt": 4
     },
     {
       "name": "まま",
-      "romaji": "mama"
+      "romaji": "mama",
+      "jlpt": 4
     },
     {
       "name": "らどうか",
-      "romaji": "radouka"
+      "romaji": "radouka",
+      "jlpt": 4
+    },
+    {
+      "name": "あとで",
+      "romaji": "atode",
+      "jlpt": 4
+    },
+    {
+      "name": "とき,V2",
+      "romaji": "toki",
+      "jlpt": 4
+    },
+    {
+      "name": "とありに,V2",
+      "romaji": "toarini",
+      "jlpt": 4
     }
   ],
-  "nai":[
+  "nai": [
     {
       "name": "ければならない",
-      "romaji": "kerebanaranai"
+      "romaji": "kerebanaranai",
+      "jlpt": 2
     },
     {
       "name": "いでください",
-      "romaji": "idekudasai"
+      "romaji": "idekudasai",
+      "jlpt": 2
+    },
+    {
+      "name": "くても,V2",
+      "romaji": "kutemo",
+      "jlpt": 2
     },
     {
       "name": "いほうがいい",
-      "romaji": "ihougaii"
+      "romaji": "ihougaii",
+      "jlpt": 2
     },
     {
       "name": "くてもいい",
-      "romaji": "kutemoii"
+      "romaji": "kutemoii",
+      "jlpt": 2
     },
     {
       "name": "くなる",
-      "romaji": "kunaru"
+      "romaji": "kunaru",
+      "jlpt": 2
     },
     {
       "name": "ずに",
-      "romaji": "zuni"
+      "romaji": "zuni",
+      "jlpt": 2
     },
     {
       "name": "いうちに",
-      "romaji": "iuchini"
+      "romaji": "iuchini",
+      "jlpt": 2
     },
     {
       "name": "いかぎり",
-      "romaji": "ikagiri"
+      "romaji": "ikagiri",
+      "jlpt": 2
     },
     {
       "name": "くてはならない",
-      "romaji": "kutehanaranai"
+      "romaji": "kutehanaranai",
+      "jlpt": 2
     },
     {
       "name": "いようにする",
-      "romaji": "iyounisuru"
+      "romaji": "iyounisuru",
+      "jlpt": 2
+    },
+    {
+      "name": "いつもり",
+      "romaji": "itsumori",
+      "jlpt": 2
     }
   ],
-  "ru":[
+  "ru": [
     {
       "name": "ことがある",
-      "romaji": "kotogaaru"
+      "romaji": "kotogaaru",
+      "jlpt": 4
     },
     {
       "name": "ことができる",
-      "romaji": "kotogadekiru"
+      "romaji": "kotogadekiru",
+      "jlpt": 4
     },
     {
       "name": "つもり",
-      "romaji": "tsumori"
+      "romaji": "tsumori",
+      "jlpt": 4
     },
     {
       "name": "ために",
-      "romaji": "tameni"
+      "romaji": "tameni",
+      "jlpt": 4
     },
     {
       "name": "ようになる",
-      "romaji": "youninaru"
+      "romaji": "youninaru",
+      "jlpt": 4
     },
     {
       "name": "ところ",
-      "romaji": "tokoro"
+      "romaji": "tokoro",
+      "jlpt": 4
+    },
+    {
+      "name": "とき,V2",
+      "romaji": "toki",
+      "jlpt": 4
     },
     {
       "name": "ようにする",
-      "romaji": "younisuru"
+      "romaji": "younisuru",
+      "jlpt": 4
     },
     {
       "name": "べきだ",
-      "romaji": "bekida"
+      "romaji": "bekida",
+      "jlpt": 2
     },
     {
       "name": "かもしれない",
-      "romaji": "kamoshirenai"
+      "romaji": "kamoshirenai",
+      "jlpt": 2
     },
     {
       "name": "まえに",
-      "romaji": "maeni"
+      "romaji": "maeni",
+      "jlpt": 2
     }
   ],
-  "masu":[
+  "masu": [
     {
-      "name": "す",
-      "romaji": "su"
+      "name": "ます",
+      "romaji": "su",
+      "jlpt": 5
     },
     {
-      "name": "せん",
-      "romaji": "sen"
+      "name": "ません",
+      "romaji": "sen",
+      "jlpt": 5
     },
     {
-      "name": "した",
-      "romaji": "shita"
+      "name": "ました",
+      "romaji": "shita",
+      "jlpt": 5
     },
     {
-      "name": "せんでした",
-      "romaji": "sendeshita"
+      "name": "ませんでした",
+      "romaji": "sendeshita",
+      "jlpt": 5
+    },
+    {
+      "name": "に(行く/来る/帰る)",
+      "romaji": "niiku",
+      "jlpt": 5
+    },
+    {
+      "name": "たい",
+      "romaji": "tai",
+      "jlpt": 5
+    },
+    {
+      "name": "ながら,V2",
+      "romaji": "nagara",
+      "jlpt": 5
+    },
+    {
+      "name": "なさい",
+      "romaji": "nasai",
+      "jlpt": 5
+    },
+    {
+      "name": "ましょうか",
+      "romaji": "mashouka",
+      "jlpt": 5
+    }
+  ],
+  "you": [
+    {
+      "name": "と思っている",
+      "romaji": "toomotteiru",
+      "jlpt": 2
     }
   ]
 }

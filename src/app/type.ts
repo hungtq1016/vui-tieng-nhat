@@ -1,5 +1,5 @@
 
-export type WordData = {
+export type TVerb = {
     index: number;
     word: string;
     kana: string;
@@ -13,7 +13,7 @@ export type WordData = {
 };
 
 export type WordDictionary = {
-    [key: string]: WordData;
+    [key: string]: TVerb;
 };
 
 export type TType = {

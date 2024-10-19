@@ -3,14 +3,14 @@ import data from '@/db/verbs.json';
 import { useTranslations } from 'next-intl';
 import { useState, useMemo } from 'react';
 import { conjugateVerb } from './logic';
-import { TConjugatedVerb, TType, WordData, WordDictionary } from './type';
+import { TConjugatedVerb, TType, TVerb, WordDictionary } from './type';
 import { groups, jlptLevels, types } from './data';
 import SentencesView from './sentences';
 
 // Type assertion for TypeScript
 const jsonData = data as unknown as WordDictionary;
 const formTypes = types as TType[];
-const verbs: WordData[] = Object.values(jsonData);
+const verbs: TVerb[] = Object.values(jsonData);
 
 export default function Home() {
   const [selectedForms, setSelectedForms] = useState<string[]>([]);
@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className='pt-10 px-10 bg-white h-screen overflow-y-scroll'>
+        <div className='py-10 px-10 bg-white h-screen overflow-y-scroll'>
           <input
             type="text"
             placeholder="Tìm kiếm..."
@@ -141,7 +141,7 @@ export default function Home() {
             </div>
             <div className='flex flex-col gap-4'>
               {filteredVerbs.map((verb) => {
-                const conjugated : TConjugatedVerb = conjugateVerb(verb.word, verb.group); // Update type if possible
+                const conjugated : TConjugatedVerb = conjugateVerb(verb); // Update type if possible
 
                 return (
                   <div key={verb.index} className="bg-white p-2 rounded">
