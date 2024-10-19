@@ -35,6 +35,10 @@
     {
       "name": "から",
       "romaji": "kara"
+    },
+    {
+      "name": "おく",
+      "romaji": "oku"
     }
   ],
   "ta":[
@@ -47,7 +51,7 @@
       "romaji": "bakari"
     },
     {
-      "name": "りたりする",
+      "name": "り,たりする",
       "romaji": "ritarisuru"
     },
     {
@@ -70,6 +74,107 @@
       "name": "らどうか",
       "romaji": "radouka"
     }
+  ],
+  "nai":[
+    {
+      "name": "ければならない",
+      "romaji": "kerebanaranai"
+    },
+    {
+      "name": "いでください",
+      "romaji": "idekudasai"
+    },
+    {
+      "name": "いほうがいい",
+      "romaji": "ihougaii"
+    },
+    {
+      "name": "くてもいい",
+      "romaji": "kutemoii"
+    },
+    {
+      "name": "くなる",
+      "romaji": "kunaru"
+    },
+    {
+      "name": "ずに",
+      "romaji": "zuni"
+    },
+    {
+      "name": "いうちに",
+      "romaji": "iuchini"
+    },
+    {
+      "name": "いかぎり",
+      "romaji": "ikagiri"
+    },
+    {
+      "name": "くてはならない",
+      "romaji": "kutehanaranai"
+    },
+    {
+      "name": "いようにする",
+      "romaji": "iyounisuru"
+    }
+  ],
+  "ru":[
+    {
+      "name": "ことがある",
+      "romaji": "kotogaaru"
+    },
+    {
+      "name": "ことができる",
+      "romaji": "kotogadekiru"
+    },
+    {
+      "name": "つもり",
+      "romaji": "tsumori"
+    },
+    {
+      "name": "ために",
+      "romaji": "tameni"
+    },
+    {
+      "name": "ようになる",
+      "romaji": "youninaru"
+    },
+    {
+      "name": "ところ",
+      "romaji": "tokoro"
+    },
+    {
+      "name": "ようにする",
+      "romaji": "younisuru"
+    },
+    {
+      "name": "べきだ",
+      "romaji": "bekida"
+    },
+    {
+      "name": "かもしれない",
+      "romaji": "kamoshirenai"
+    },
+    {
+      "name": "まえに",
+      "romaji": "maeni"
+    }
+  ],
+  "masu":[
+    {
+      "name": "す",
+      "romaji": "su"
+    },
+    {
+      "name": "せん",
+      "romaji": "sen"
+    },
+    {
+      "name": "した",
+      "romaji": "shita"
+    },
+    {
+      "name": "せんでした",
+      "romaji": "sendeshita"
+    }
   ]
-  
 }

@@ -29,18 +29,36 @@ export function conjugateVerb(verb: string, group: number) {
 }
 
 function createConjugationResult(verb: string, stem: string, forms: string[]) {
+
+    const sentence = {
+        masu: stem + forms[0], // stem + masu form
+        te: stem + forms[1],   // stem + te form
+        ta: stem + forms[2],   // stem + ta form
+        nai: stem + forms[3],  // stem + nai form
+        ba: stem + forms[4],   // stem + ba form
+        you: forms[5] ? stem + forms[5] : '', // stem + you form
+        rare: forms[6] ? stem + forms[6] : '', // stem + rare form
+        rareru: forms[7] ? stem + forms[7] : '', // stem + rareru form
+        saseru: forms[8] ? stem + forms[8] : '', // stem + saseru form
+        ro: forms[9] ? stem + forms[9] : '', // stem + ro form
+        runa: forms[10] ? stem + forms[10] : '', // stem + runa form
+    }
+
     return {
-        ru: verb,
-        masu: stem + forms[0],
-        te: stem + forms[1],
-        ta: stem + forms[2],
-        nai: stem + forms[3],
-        ba: stem + forms[4],
-        you: forms[5] ? stem + forms[5] : '',
-        rare: forms[6] ? stem + forms[6] : '',
-        rareru: forms[7] ? stem + forms[7] : '',
-        saseru: forms[8] ? stem + forms[8] : '',
-        ro: forms[9] ? stem + forms[9] : '',
-        runa: forms[10] ? stem + forms[10] : '',
+        show: {
+            ru: verb,
+            masu: sentence.masu+"す",
+            te: sentence.te,
+            ta: sentence.ta,
+            nai: sentence.nai+"い",
+            ba: sentence.ba,
+            you: sentence.you,
+            rare: sentence.rare,
+            rareru: sentence.rareru,
+            saseru: sentence.saseru,
+            ro: sentence.ro,
+            runa: sentence.runa,
+        },
+        sentence,
     };
 }

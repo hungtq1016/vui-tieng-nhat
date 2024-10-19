@@ -25,3 +25,12 @@ export type TGroup = {
     value: number;
     name: string;
 }
+
+type Verb = {
+    [key: string] : string
+}
+
+export type TConjugatedVerb = {
+    show: Verb,
+    sentence: Verb
+}

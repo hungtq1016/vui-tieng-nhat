@@ -4,7 +4,7 @@
     "tsukeru": "ngâm (dưa, quần áo); tẩm; ướp (gia vị)",
     "yaru": "làm",
     "ijimeru": "chế nhạo",
-    "akeru": "mở (cửa, v.v.); mở gói (ví dụ: bưu kiện, gói hàng); mở khóa",
+    "akeru": "mở (cửa); mở gói (bưu kiện); mở khóa",
     "ageru": "nâng lên; nâng cao",
     "agaru": "tăng lên",
     "kudasaru": "(kính ngữ) cho",
@@ -112,7 +112,7 @@
     "suteru": "ném đi; vứt bỏ",
     "motsu": "cầm; giữ",
     "hirou": "nhặt lên; thu thập",
-    "kakaru": "tốn (tài nguyên, ví dụ: thời gian hoặc tiền bạc)",
+    "kakaru": "tốn (tài nguyên, thời gian, tiền bạc)",
     "kakeru": "treo lên; thực hiện (cuộc gọi)",
     "suu": "hút; mút",
     "okoru": "tức giận",
@@ -136,7 +136,7 @@
     "oide ni naru": "(kính ngữ) là",
     "omoidasu": "nhớ lại",
     "deau": "gặp (tình cờ); tình cờ gặp; gặp phải",
-    "gaishutsusuru": "ra ngoài; đi chơi; rời khỏi (nhà, văn phòng, v.v.)",
+    "gaishutsusuru": "ra ngoài; đi chơi; rời khỏi (nhà, văn phòng)",
     "yushutsusuru": "xuất khẩu; sự xuất khẩu",
     "hairu": "vào; đi vào",
     "ireru": "cho vào; đưa vào; lắp vào; cài vào",
@@ -234,7 +234,7 @@
     "kangaeru": "nghĩ",
     "oshieru": "dạy",
     "tariru": "đủ; vừa đủ",
-    "tasu": "thêm vào (số liệu / cái gì đó)",
+    "tasu": "thêm vào (số liệu, cái gì đó)",
     "fusokusuru": "không đủ; thiếu thốn",
     "manzokusuru": "sự hài lòng; đủ; vừa đủ",
     "ensokusuru": "chuyến đi; dã ngoại",
@@ -278,7 +278,7 @@
     "shoujiru": "sản xuất",
     "jisshuusuru": "thực hành; đào tạo; bài tập thực tế",
     "tsutomeru": "làm việc cho ai đó",
-    "noru": "lên (tàu, máy bay, xe buýt, thuyền, v.v.)",
+    "noru": "lên (tàu, máy bay, xe buýt, thuyền, phương tiện)",
     "norikaeru": "chuyển giữa xe buýt hoặc tàu",
     "kinensuru": "kỷ niệm; tôn vinh ký ức",
     "yoshuusuru": "chuẩn bị cho bài học",
@@ -289,7 +289,7 @@
     "kaishisuru": "bắt đầu; khởi đầu",
     "kaikaisuru": "khai mạc một cuộc họp; bắt đầu một sự kiện",
     "shimaru": "đóng lại; bị đóng",
-    "heikaisuru": "đóng cửa (lễ hội, sự kiện, cuộc họp, v.v.)",
+    "heikaisuru": "đóng cửa (lễ hội, sự kiện, cuộc họp)",
     "kiku": "nghe; lắng nghe (âm nhạc); hỏi; biết được",
     "kikoeru": "được nghe; có thể nghe thấy",
     "kimaru": "được quyết định",
@@ -307,7 +307,7 @@
     "mukaeru": "đi ra gặp",
     "noboru": "leo lên",
     "hatsumeisuru": "phát minh",
-    "hatsubaisuru": "bán; phát hành (để bán); ra mắt (sản phẩm)",
+    "hatsubaisuru": "bán; phát hành (sản phẩm); ra mắt (sản phẩm)",
     "mairu": "(khiêm nhường) đi; đến",
     "kawaru": "thay đổi",
     "kitaisuru": "mong đợi; hy vọng",
@@ -389,11 +389,12 @@
       "moidesuka": "Xin phép {v} được không?.",
       "kudasai": "Yêu cầu hãy {v}.",
       "iru": "Đang {v}.",
-      "shimau": "Diễn tả hành động hoàn thành hoặc không mong muốn {v}.",
+      "shimau": "Đã/ Lỡ {v} mất rồi.",
       "miru": "Thử {v}.",
       "ageru": "Tôi {v} cho ai đó.",
       "morau": "Tôi được ai đó {v} cho.",
-      "kara": "Sau khi {v}."
+      "kara": "Sau khi {v}.",
+      "oku": "Chuẩn bị {v}."
     },
     "ta":{
       "kotogaaru": "Đã từng {v}.",
@@ -404,7 +405,36 @@
       "noni": "Mặc dù đã {v}.",
       "mama": "Trong trạng thái {v}.",
       "radouka": "Nếu {v} thì sao?"
+    },
+    "nai":{
+      "kerebanaranai": "Phải {v}.",
+      "idekudasai": "Xin đừng {v}.",
+      "ihougaii": "Không nên {v}.",
+      "kutemoii": "Không cần phải {v}.",
+      "kunaru": "Không còn {v}.",
+      "zuni": "Không {v} mà.",
+      "iuchini": "Trước khi {v}.",
+      "ikagiri": "Trừ khi {v}.",
+      "kutehanaranai": "Không thể không {v}.",
+      "iyounisuru": "Cố gắng để không {v}."
+    },
+    "ru":{
+      "kotogaaru": "Đã từng {v}.",
+      "kotogadekiru": "Có thể {v}.",
+      "tsumori": "Dự định {v}.",
+      "tameni": "Để {v}.",
+      "youninaru": "Trở đã có thể {v}.",
+      "tokoro": "Sắp/ Vừa {v}.",
+      "younisuru": "Cố gắng {v}.",
+      "bekida": "Nên {v}.",
+      "kamoshirenai": "Có lẽ sẽ {v}.",
+      "maeni": "Trước khi {v}."
+    },
+    "masu":{
+      "su":"(Lịch sự) {v}",
+      "sen":"Không {v}",
+      "shita":"Đã {v}",
+      "sendeshita":"Đã không {v}"
     }
-    
   }
 }
