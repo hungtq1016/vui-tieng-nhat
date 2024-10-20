@@ -65,8 +65,9 @@ export default function Home() {
           />
 
           <div className="mb-4">
-            <label className="block mb-2">{transHome("verbtypes.label")}</label>
+            <label htmlFor='verbType' className="block mb-2">{transHome("verbtypes.label")}</label>
             <select
+              id='verbType'
               value={verbType}
               onChange={handleVerbTypeChange}
               className="border border-gray-300 rounded-md p-2 w-full"
@@ -80,8 +81,9 @@ export default function Home() {
           </div>
 
           <div className="mb-4">
-            <label className="block mb-2">{transHome("jlpt.label")}</label>
+            <label htmlFor='jlptLevel' className="block mb-2">{transHome("jlpt.label")}</label>
             <select
+              id='jlptLevel'
               value={jlptLevel}
               onChange={handleJlptLevelChange}
               className="border border-gray-300 rounded-md p-2 w-full"
@@ -95,7 +97,7 @@ export default function Home() {
           </div>
 
           <div className="mb-4">
-            <label className="block mb-2">{transHome("forms.label")}</label>
+            <div className="block mb-2">{transHome("forms.label")}</div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
               {formTypes.map((formType) => (
                 <div key={formType.value}>
